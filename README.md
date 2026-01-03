@@ -10,6 +10,10 @@ This program rewrites the code from chrony-4.8 to achieve the following two poin
 - Bypassing encryption and decryption processing
 - Displaying T1 and T2 on screen using printf statements
 
+# Requirements
+chrony version 4.8
+gcc / make
+
 
 # Install/Usage
 
@@ -21,5 +25,6 @@ Moka Yoshida
 
 # References
 
-# License
 
+# License
+GPLv2.0
