@@ -1,20 +1,11 @@
 # Use four public NTP servers from the pool.ntp.org project.
-### H. Kuwakado
-###pool pool.ntp.org iburst
-#server time.cloudflare.com iburst nts
-#server time.cloudflare.com iburst
 
-#M.Yoshida
-#server esa.kwdlab.org minpoll 2 maxpoll 2
-server esa.kwdlab.org nts minpoll 2 maxpoll 2
-
-#server espa.kwdlab.org minpoll 2 maxpoll 2
-#server  espa.kwdlab.org nts minpoll 2 maxpoll 2
+#server 同期先を指定
 
 #ntsdumpdir /var/lib/chrony
 
 # Record the rate at which the system clock gains/losses time.
-### H. Kuwakado
+
 ###driftfile /var/lib/chrony/drift
 driftfile /opt/Chrony/var/lib/drift
 
@@ -27,18 +18,13 @@ rtcsync
 
 # Set the TAI-UTC offset of the system clock.
 #leapseclist /usr/share/zoneinfo/leap-seconds.list
-### H. Kuwakado
-leapseclist /usr/share/zoneinfo/leap-seconds.list
+
 
 # Specify directory for log files.
-### H. Kuwakado
-###logdir /var/log/chrony
 logdir /opt/Chrony/var/log
 
 # Select which information is logged.
 #log measurements statistics tracking
-### H. Kuwakado
-log measurements statistics tracking
 
 
 #######################################################################
@@ -50,36 +36,15 @@ log measurements statistics tracking
 #
 # e.g. to enable client access from the 192.168.*.* class B subnet,
 
-### H. Kuwakado
-#allow all
-deny all
-# esd.kwdlab.org
-allow 153.127.52.84
-allow 192.168.10.14
-# esa.kwdlab.org
-allow 153.120.63.35
-allow 192.168.10.13
-# exa.kwdlab.org
-allow 162.43.26.180
-# mozu.kwdlab.kutc.kansai-u.ac.jp
-allow 158.217.63.118
-# ruby.kwdlab.org
-allow 153.126.241.35
+# M.Yoshida
+allow クライアントのIPアドレス
 
 # If chronyd is configured to act as an NTP server and you want to enable NTS
 # for its clients, you will need a TLS certificate and private key.  Uncomment
 # and edit the following lines to specify the locations of the certificate and
 # key.
 
-#ntsservercert /etc/letsencrypt/live/esd.kwdlab.org/fullchain.pem
-#ntsserverkey /etc/letsencrypt/live/esd.kwdlab.org/privkey.pem
+#ntsservercert 証明書へのフルパス
+#ntsserverkey 秘密鍵へのフルパス
 
-
-#ntsservercert  /etc/letsencrypt/live/espd.kwdlab.org/fullchain.pem
-#ntsserverkey /etc/letsencrypt/live/espd.kwdlab.org/privkey.pem
-
-#ntstrustedcerts /opt/Chrony/shoumei/espa/rsa-pss/sha256/ca.crt
-
-
-#ntsprocesses 8
 # end of file
