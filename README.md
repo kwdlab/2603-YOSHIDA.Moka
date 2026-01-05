@@ -17,15 +17,15 @@ gcc / make
 
 
 # Install/Usage
-
-git clone https://github.com/kwdlab/2603-Yoshida.Moka.git
+Install the chrony package using the following site as a reference.
+URL: https://chrony-project.org/download.html
 
 # Author
 
 Moka Yoshida
 
 # References
-
+chrony https://chrony-project.org/index.html
 
 # License
 GPLv2.0
