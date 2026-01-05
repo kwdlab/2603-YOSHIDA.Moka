@@ -2,15 +2,7 @@
 #pool pool.ntp.org iburst
 #M.Yoshida
 
-server time.cloudflare.com iburst nts 
-#server  ntp1.wiktel.com iburst nts
-#server time.web-clock.ca iburst nts
-
-#server time.cloudflare.com iburst 
-#server  ntp1.wiktel.com iburst 
-#server time.web-clock.ca iburst 
-
-#server esd.kwdlab.org iburst nts
+server 同期先を設定
 
 # Record the rate at which the system clock gains/losses time.
 driftfile /var/lib/chrony/drift
@@ -23,32 +15,9 @@ makestep 1.0 3
 rtcsync
 
 #M.Yoshida
-#allow 153.127.52.84
-#allow 192.168.10.14
+#allow クライアントのIPアドレス
 
-# H. Kuwakado
-deny all
-# esd.kwdlab.org
-allow 153.127.52.84
-allow 192.168.10.14
-# esa.kwdlab.org
-allow 153.120.63.35
-allow 192.168.10.13
-# exa.kwdlab.org
-allow 162.43.26.180
-# mozu.kwdlab.kutc.kansai-u.ac.jp
-allow 158.217.63.118
-# ruby.kwdlab.org
-allow 153.126.241.35
-
-ntsservercert /etc/letsencrypt/live/esa.kwdlab.org/fullchain.pem
-ntsserverkey /etc/letsencrypt/live/esa.kwdlab.org/privkey.pem
-#ntsservercert /etc/letsencrypt/live/espa.kwdlab.org/fullchain.pem
-#ntsserverkey /etc/letsencrypt/live/espa.kwdlab.org/privkey.pem
-
-#ntsservercert /opt/Chrony/shoumei/espa/rsa-pss/sha256/server.crt
-#ntsserverkey  /opt/Chrony/shoumei/espa/rsa-pss/sha256/server.key
-
-#ntsprocesses 8
+ntsservercert 証明書へのフルパス
+ntsserverkey 秘密鍵へのフルパス
 
 #end of file
