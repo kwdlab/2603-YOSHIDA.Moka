@@ -1,6 +1,6 @@
 # Use four public NTP servers from the pool.ntp.org project.
 
-#server 同期先を指定
+#server サーバを設定
 
 #ntsdumpdir /var/lib/chrony
 
@@ -36,8 +36,6 @@ logdir /opt/Chrony/var/log
 #
 # e.g. to enable client access from the 192.168.*.* class B subnet,
 
-# M.Yoshida
-allow クライアントのIPアドレス
 
 # If chronyd is configured to act as an NTP server and you want to enable NTS
 # for its clients, you will need a TLS certificate and private key.  Uncomment
