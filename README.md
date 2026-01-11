@@ -18,7 +18,11 @@ gcc / make
 
 # Install/Usage
 Install the chrony package using the following site as a reference.
+
 URL: https://chrony-project.org/download.html
+
+When chrony is started with the -d option, it displays T1 and T2 values on the screen. 
+T1 indicates the time the client sent the request, and T2 indicates the time the server received the request. The difference T2-T1 shows the time taken for the request to be sent and received. Note that each time is obtained from the timestamp within the NTP or NTS packet.
 
 # Author
 
